@@ -1,0 +1,11 @@
+.profile__edit-button {
+  grid-area: editButton; 
+  background-image: url(/mesto/images/edit-button.svg);
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+  background-position: 0 37px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: #000000;
+ }

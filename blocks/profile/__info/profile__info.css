@@ -1,0 +1,13 @@
+.profile__info {
+  max-width: 336px;
+  display: grid;
+  grid-template-columns: 294px 24px;
+  grid-template-rows: 1fr;
+  row-gap: 16px;
+  column-gap: 18px;
+  grid-template-areas: 
+  "title editButton"
+  "subtitle subtitle";
+  color: #FFFFFF;
+  padding: 0 244px 0 3.75px;
+  }

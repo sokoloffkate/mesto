@@ -1,3 +1,5 @@
 .header__line {
     max-width: 880px; 
+    padding-top: 41px;
+    box-sizing: border-box;
 }
