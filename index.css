@@ -19,3 +19,5 @@
 @import url(blocks/elements-grid/__title/elements-grid__title.css);
 @import url(blocks/elements-grid/__info/elements-grid__info.css);
 @import url(blocks/elements-grid/__icon/elements-grid__icon.css);
+@import url(blocks/footer/footer.css);
+@import url(blocks/footer/__info/footer__info.css);
