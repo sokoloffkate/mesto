@@ -6,3 +6,17 @@
   width: 100%;
   margin: 40px auto 67px;
 }
+
+@media screen and (max-width: 984px) {
+    .content {
+     max-width: 760px; 
+   }  
+  }
+
+@media screen and (max-width: 568px) {
+  .content {
+    max-width: 282px;
+    gap: 36px;
+    margin: 42px auto 48px;
+ }  
+}

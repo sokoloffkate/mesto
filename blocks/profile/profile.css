@@ -5,3 +5,16 @@
  max-width: 880px;;
  font-family: 'Inter', Arial, sans-serif;
 }
+
+@media screen and (max-width: 984px) {
+    .profile {
+      max-width: 760px;
+   }  
+  }
+
+@media screen and (max-width: 568px) {
+    .profile {
+      max-width: 282px;
+      flex-direction: column;
+   }  
+  }

@@ -9,3 +9,10 @@
   border: 0;
   background-color: #000000;
  }
+
+ @media screen and (max-width: 568px) {
+  .profile__edit-button {
+    background-size: 18px 18px;
+    background-position: 0 10px;
+ }  
+}
