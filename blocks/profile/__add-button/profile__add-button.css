@@ -9,6 +9,11 @@
   padding: 0;
 }
 
+.profile__add-button:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 568px) {
   .profile__add-button {
     background-image: url(/mesto/images/add-button-mob.png);

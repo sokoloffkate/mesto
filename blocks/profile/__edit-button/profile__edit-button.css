@@ -10,6 +10,11 @@
   background-color: #000000;
  }
 
+ .profile__edit-button:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
  @media screen and (max-width: 568px) {
   .profile__edit-button {
     background-size: 18px 18px;

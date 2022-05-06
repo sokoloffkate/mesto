@@ -1,0 +1,27 @@
+.popup__close-button {
+  width: 32px;
+  height: 32px; 
+  background-image: url(/mesto/images/close-button.png); 
+  background-repeat: no-repeat;
+  background-color: black;
+  border: none;
+  position: absolute;
+  top: 15%;
+  left: 68%;
+  }
+
+  .popup__close-button:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+
+
+@media screen and (max-width: 568px) {
+    .popup__close-button {
+      background-image: url(/mesto/images/close-button-mob.png);
+      top: 8%;
+      left:90%;
+      width: 20px;
+      height: 20px;;
+   }  
+  }
