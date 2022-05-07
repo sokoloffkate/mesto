@@ -10,7 +10,7 @@
   "subtitle subtitle";
   color: #FFFFFF;
   padding: 0 244px 0 3.75px;
-  }
+}
 
   @media screen and (max-width: 984px) {
     .profile__info {
@@ -25,7 +25,6 @@
       grid-template-rows: 1fr;
       column-gap: 10px;
       row-gap: 14px;
-      padding: 0;
-      margin: 22.25px 0 36px;
+      padding: 22.25px 19px 36px 46px;
   }  
   }

@@ -11,7 +11,6 @@
 
     <header class="header">
       <img src="images/logo.svg" class="header__logo" alt="Лого">
-      <img src="images/Line.png" class="header__line" alt="Линия">
     </header>
     
     <main class="content">
@@ -22,10 +21,14 @@
         <div class="profile__info">
           <h1 class="profile__title">Жак-Ив Кусто</h1>
           <p  class="profile__subtitle">Исследователь океана</p> 
-          <button type="button" class="profile__edit-button"></button> 
+          <button type="button" class="profile__edit-button">
+            <img src="../mesto/images/edit-button.png" class="profile__edit-button-name"> alt="Редактировать">  
+          </button> 
         </div>
-        <button type="button" class="profile__add-button"></button>
-      </section> 
+        <button type="button" class="profile__add-button">
+          <img src="../mesto/images/add-button.png" class="profile__add-button-name">alt="Добавить">  
+        </button>
+        </section> 
        
       <section class="elements-grid">
         <div class="elements-grid__element">
@@ -83,15 +86,13 @@
        <h1 class="popup__title">Редактировать профиль</h1>
        <form action="submit" class="popup__form">
          <input type="text" class="popup__field" id="popup_name">
-         <img src="images/line-popup.png" class="popup__line" alt="Линия">
          <input type="text" class="popup__field" id="popup_job">
-         <img src="images/line-popup.png" class="popup__line" alt="Линия">
          <button class="popup__save-button">
           <span class="popup__save-button-name">Сохранить</span>
         </button>
        </form>
       </div>    
     </div>
-<script src="/mesto/index.js"></script>
+<script src='index.js'></script>
 </body>
 </html>

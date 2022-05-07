@@ -2,6 +2,7 @@
     max-width: 358px;
     height: 14px;
     border: hidden;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     font-size: 14px;
     font-weight: 400;
     line-height: 17px;
@@ -9,6 +10,10 @@
     color:#000000;
     padding: 0 0 13px 0;
 }  
+
+.popup__field:nth-child(2) {
+  margin: 30px 0 0 0;
+}
 
 @media screen and (max-width: 568px) {
   .popup__field {
