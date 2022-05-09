@@ -3,6 +3,10 @@
   height: 50px;
   border: 2px solid rgba(255, 255, 255, 1);
   border-radius: 2px;
+  background-image: url(../../../images/add-button.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 22px;
   background-color: #000000;
   padding: 0;
 }
@@ -15,5 +19,6 @@
 @media screen and (max-width: 568px) {
   .profile__add-button {
     width: 282px;
+    background-size: 16px;
   }  
 }
