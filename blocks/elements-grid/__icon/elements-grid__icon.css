@@ -1,7 +1,7 @@
 .elements-grid__icon {
   width: 35px;
   height: 30px;
-  background-image: url(/mesto/images/icon.svg);
+  background-image: url(../../../images/icon.svg);
   background-repeat: no-repeat;
   background-size: 22px 19px;
   background-position: 5px 5px;

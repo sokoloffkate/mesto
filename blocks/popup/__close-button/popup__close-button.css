@@ -1,13 +1,13 @@
 .popup__close-button {
   width: 32px;
   height: 32px;
-  background-image: url('../../../images/close-button.png');
+  background-image: url('../../../images/close-button.svg');
   background-repeat: no-repeat;
   background-color: black;
   border: none;
   position: absolute;
-  top: 15%;
-  left: 68%;
+  top: -40px;
+  right: -40px;
 }
 
 .popup__close-button:hover {
@@ -18,9 +18,8 @@
 
 @media screen and (max-width: 568px){
     .popup__close-button{
-      background-image: url(/mesto/images/close-button-mob.png);
-      top: 8%;
-      left:90%;
+      background-size: 20px;
+      right:0;
       width: 20px;
       height: 20px;
    }
