@@ -6,8 +6,8 @@
   text-align: left;
   margin: 0;
   padding-bottom: 25px;
-  text-overflow: ellipsis; 
-  white-space: nowrap; 
+  text-overflow: ellipsis;
+  white-space: nowrap;
   overflow: hidden;
 }
 
