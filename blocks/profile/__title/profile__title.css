@@ -1,7 +1,6 @@
 .profile__title {
   grid-area: title;
   max-width: 294px;
-  max-height: 39px;
   font-size: 42px;
   font-weight: 500;
   line-height: 48px;
