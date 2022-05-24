@@ -25,7 +25,7 @@
         </section> 
        
       <section class="elements-grid">
-        <div class="elements-grid__element">
+       <!-- <div class="elements-grid__element">
           <img src="images/Carmel.jpg" class="elements-grid__image" alt="Кармел">
           <div class="elements-grid__info">
             <h2 class="elements-grid__title">Кармел</h2>
@@ -66,7 +66,7 @@
              <h2 class="elements-grid__title">Аризона</h2>
              <button type="button" class="elements-grid__icon"></button>
             </div> 
-        </div> 
+        </div> -->
        </section>
     </main>
     
@@ -74,8 +74,8 @@
        <p class="footer__info">© 2020 Mesto Russia</p>    
     </footer>
 
-    <div class="popup">
-      <div class="popup__container">
+    <div class="popup popup_edit">
+       <div class="popup__container">
        <button type="button" class="popup__close-button"></button>     
        <h2 class="popup__title">Редактировать профиль</h2>
        <form action="submit" class="popup__form" name="submitForm">
@@ -85,6 +85,38 @@
        </form>
       </div>    
     </div>
+
+    <div class="popup popup_add">
+      <div class="popup__container">
+       <button type="button" class="popup__close-button"></button>     
+       <h2 class="popup__title">Новое место</h2>
+       <form action="submit" class="popup__form popup_add-form" name="submitForm">
+         <input type="text" class="popup__field pop__field_place-name" placeholder="Название" name="placeName" >
+         <input type="text" class="popup__field pop__fiels_place_link" placeholder="Ссылка на картинку" name="placeLink">
+         <button type="submit" class="popup__save-button">Создать</button>
+       </form>
+      </div>    
+    </div>
+
+    <div class="popup popup_zoom-in-image">
+      <div class="popup__container-image">
+       <button type="button" class="popup__close-button"></button>  
+       <img class = "popup__image">   
+       <h2 class="popup__image-title"></h2>
+      </div>    
+    </div>
+
+    <template id="card-template">
+      <div class="elements-grid__element">
+        <button type="button" class = "elements-grid__trash"></button>
+        <img class="elements-grid__image">
+        <div class="elements-grid__info">
+          <h2 class="elements-grid__title"></h2>
+          <button type="button" class="elements-grid__icon"></button>
+       </div> 
+       </div> 
+    </template>
+
 <script src='scripts/index.js'></script>
 </body>
 </html>
