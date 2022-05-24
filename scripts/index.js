@@ -15,8 +15,8 @@ let profileName = document.querySelector('.profile__title');
 let profileJob = document.querySelector('.profile__subtitle');
 let inputName = form.querySelector('.popup__field_type_name');
 let inputJob = form.querySelector('.popup__field_type_job');
-let placeName = formAdd.querySelector('.pop__field_place_name');
-let placeLink = formAdd.querySelector('.pop__fiels_place_link');
+let placeName = formAdd.querySelector('.popup__field_place_name');
+let placeLink = formAdd.querySelector('.popup__fiels_place_link');
 
 const initialCards = [
   {
