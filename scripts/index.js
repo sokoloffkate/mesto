@@ -1,6 +1,6 @@
 const cardsGrid = document.querySelector('.elements-grid');
 const cardTemplate = document.querySelector('#card-template').content;
-const formAdd = document.querySelector('.popup_add_form');
+const formAdd = document.querySelector('.popup_form_add');
 const popUp = document.querySelectorAll('.popup');
 const popUpEditBut = document.querySelector('.profile__edit-button');
 const popUpEdit = document.querySelector('.popup_edit');
