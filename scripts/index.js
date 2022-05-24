@@ -1,6 +1,6 @@
 const cardsGrid = document.querySelector('.elements-grid');
 const cardTemplate = document.querySelector('#card-template').content;
-const formAdd = document.querySelector('.popup_add-form');
+const formAdd = document.querySelector('.popup_add_form');
 const popUp = document.querySelectorAll('.popup');
 const popUpEditBut = document.querySelector('.profile__edit-button');
 const popUpEdit = document.querySelector('.popup_edit');
@@ -15,7 +15,7 @@ let profileName = document.querySelector('.profile__title');
 let profileJob = document.querySelector('.profile__subtitle');
 let inputName = form.querySelector('.popup__field_type_name');
 let inputJob = form.querySelector('.popup__field_type_job');
-let placeName = formAdd.querySelector('.pop__field_place-name');
+let placeName = formAdd.querySelector('.pop__field_place_name');
 let placeLink = formAdd.querySelector('.pop__fiels_place_link');
 
 const initialCards = [
