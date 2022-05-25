@@ -10,3 +10,8 @@
   z-index: 1;
   border: none;
 }    
+
+.elements-grid__trash:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
