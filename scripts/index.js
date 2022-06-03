@@ -3,14 +3,14 @@ const cardTemplate = document.querySelector('#card-template').content;
 const popUpAddForm = document.querySelector('.popup__form_add_card');
 const popUps = document.querySelectorAll('.popup');
 const popUpEditBut = document.querySelector('.profile__edit-button');
-const popUpEdit = document.querySelector('.popup_edit_profil');
+const popUpEdit = document.querySelector('.popup_edit_profile');
 const popUpAddBut = document.querySelector('.profile__add-button');
 const popUpAdd = document.querySelector('.popup_add_card');
 const popUpZoomInImg = document.querySelector('.popup_zoom-in_image');
 const popUpImg = popUpZoomInImg.querySelector('.popup__image');
 const popUpTitle = popUpZoomInImg.querySelector('.popup__image-title');
 const popUpCloseButs = document.querySelectorAll('.popup__close-button');
-const popUpEditForm = document.querySelector('.popup__form');
+const popUpEditForm = document.querySelector('.popup__form_edit_card');
 const profileName = document.querySelector('.profile__title');
 const profileJob = document.querySelector('.profile__subtitle');
 const inputName = popUpEditForm.querySelector('.popup__field_type_name');
@@ -134,16 +134,16 @@ popUpAddForm.addEventListener('submit', addNewCard);
 initialCards.forEach(el => {
   const makeCard = createCard (el);
   addCard(makeCard);
-}
-  );
+});
 
-//Закрать всплывающие окна
+//Закрывает всплывающие окна
 for (let i=0; i<popUps.length;i++){
   popUps[i].addEventListener('click', function (evt) {
   const evtTarget = evt.target;
   if (evtTarget === popUpCloseButs[i]){
-    closePopUp(popUps[i]);}
-   });}
+  closePopUp(popUps[i]);}
+   });
+  }
 
 
 
