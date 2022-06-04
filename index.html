@@ -25,49 +25,7 @@
         </section> 
        
       <section class="elements-grid">
-       <!-- <div class="elements-grid__element">
-          <img src="images/Carmel.jpg" class="elements-grid__image" alt="Кармел">
-          <div class="elements-grid__info">
-            <h2 class="elements-grid__title">Кармел</h2>
-            <button type="button" class="elements-grid__icon"></button>
-          </div>
-        </div>
-        <div class="elements-grid__element">
-          <img src="images/Bavaria.jpg" class="elements-grid__image" alt="Бавария">
-          <div class="elements-grid__info">
-            <h2 class="elements-grid__title">Бавария</h2>
-            <button type="button" class="elements-grid__icon"></button>
-          </div> 
-        </div>
-        <div class="elements-grid__element">
-         <img src="images/Аризона.jpg" class="elements-grid__image" alt="Аризона">
-         <div class="elements-grid__info">
-           <h2 class="elements-grid__title">Аризона</h2>
-           <button type="button" class="elements-grid__icon"></button>
-        </div> 
-        </div> 
-        <div class="elements-grid__element">
-            <img src="images/Carmel.jpg" class="elements-grid__image" alt="Кармел">
-            <div class="elements-grid__info">
-              <h2 class="elements-grid__title">Кармел</h2>
-              <button type="button" class="elements-grid__icon"></button>
-            </div>
-          </div>
-          <div class="elements-grid__element">
-            <img src="images/Bavaria.jpg" class="elements-grid__image" alt="Бавария">
-            <div class="elements-grid__info">
-              <h2 class="elements-grid__title">Бавария</h2>
-              <button type="button" class="elements-grid__icon"></button>
-            </div> 
-          </div>
-          <div class="elements-grid__element">
-           <img src="images/Аризона.jpg" class="elements-grid__image" alt="Аризона">
-           <div class="elements-grid__info">
-             <h2 class="elements-grid__title">Аризона</h2>
-             <button type="button" class="elements-grid__icon"></button>
-            </div> 
-        </div> -->
-       </section>
+      </section>
     </main>
     
     <footer class="footer">
@@ -79,26 +37,24 @@
        <button type="button" class="popup__close-button"></button>     
        <h2 class="popup__title">Редактировать профиль</h2>
        <form action="submit" class="popup__form popup__form_edit_card" name="submitForm" novalidate>
-        <fieldset class="popup__form-fieldset">
+      <!--<fieldset class="popup__form-fieldset">-->
         <input type="text" 
-               class="popup__field popup__field_type_name" 
-               name="typeName" 
-               minlength="2" 
-               maxlength="40" 
-               id="field-name"
-               required>
+          class="popup__field popup__field_type_name" 
+          name="typeName" 
+          minlength="2" 
+          maxlength="40" 
+          id="field-name"
+          required>
          <span class="popup__field-error field-name-error"></span>
-        </fieldset>
-        <fieldset class="popup__form-fieldset">
-         <input type="text" 
-                class="popup__field popup__field_type_job" 
-                name="typeJob" 
-                minlength="2" 
-                maxlength="200" 
-                id="field-job"
-                required>
+        <input type="text" 
+          class="popup__field popup__field_type_job" 
+          name="typeJob" 
+          minlength="2" 
+          maxlength="200" 
+          id="field-job"
+          required>
          <span class="popup__field-error field-job-error"></span>
-        </fieldset>
+      <!--</fieldset>-->
          <button type="submit" class="popup__button popup__save-button">Сохранить</button>
        </form>
       </div>    
@@ -109,26 +65,24 @@
        <button type="button" class="popup__close-button"></button>     
        <h2 class="popup__title">Новое место</h2>
        <form action="submit" class="popup__form popup__form_add_card" name="submitForm" novalidate>
-        <fieldset class="popup__form-fieldset">
+      <!--<fieldset class="popup__form-fieldset">-->
         <input type="text" 
-               class="popup__field popup__field_place_name" 
-               placeholder="Название" 
-               name="placeName"
-               minlength="2" 
-               maxlength="30"
-               id="field-place"
-               required>
+          class="popup__field popup__field_place_name" 
+          placeholder="Название" 
+          name="placeName"
+          minlength="2" 
+          maxlength="30"
+          id="field-place"
+          required>
          <span class="popup__field-error field-place-error"></span>
-        </fieldset>
-        <fieldset class="popup__form-fieldset">
-         <input type="url" 
-                class="popup__field popup__field_place_link" 
-                placeholder="Ссылка на картинку" 
-                name="placeLink"
-                id="field-link"
-                required>
+        <input type="url" 
+          class="popup__field popup__field_place_link" 
+          placeholder="Ссылка на картинку" 
+          name="placeLink"
+          id="field-link"
+          required>
          <span class="popup__field-error field-link-error"></span>
-        </fieldset>
+      <!--</fieldset>-->
          <button type="submit" class="popup__button popup__add-button">Создать</button>
        </form>
       </div>    
