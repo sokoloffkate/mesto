@@ -53,11 +53,12 @@ const config = {
  };
 
   const toggleButtonState = (inputList, button, inactiveBut) => {
-    if (hasInvalidField(inputList)) {
-
-     button.classList.add(inactiveBut);    
+    if (hasInvalidField(inputList)) { 
+      button.classList.add(inactiveBut);
+      button.disabled = true;    
     } else{
-     button.classList.remove(inactiveBut);    
+      button.classList.remove(inactiveBut); 
+      button.disabled = false;   
     }  
   };
 
