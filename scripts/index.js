@@ -47,7 +47,7 @@ const initialCards = [
 
 // Переключениe кнопки like 
 const likeHandle = evt => { 
-evt.target.classList.toggle('elements-grid__icon_active');
+  evt.target.classList.toggle('elements-grid__icon_active');
 }
 
 //Удаление карточки
@@ -62,42 +62,41 @@ function insertNameJob() {
 };
 
  popUpEditBut.addEventListener('click', function(evt) {
-  popUpEdit.addEventListener('click', handleClickOverlay); 
   openPopUp(popUpEdit);
   insertNameJob();
 });
 
+//Функция, проверяющая нажата ли кнопка Esc, если нажата закрывает попап
+const PressEscHandler = (evt) => {
+  if(evt.key === 'Escape') {
+  popUps.forEach((popup) => {
+  closePopUp(popup); 
+  })};  
+};
+
  //Функция открытия popup
 const openPopUp = (popup) => {
   popup.classList.add('popup_opened');
+  document.addEventListener('keydown', PressEscHandler); 
+  popup.addEventListener('click', handleClickOverlay);
 };
 
 //Функция закрытия popup
 const closePopUp = (popup) => {
   popup.classList.remove('popup_opened');
+  document.removeEventListener('keydown', PressEscHandler);
+  popup.removeEventListener('click', handleClickOverlay);
 };
-
-//Закрывает popup при нажатии кнопки Esc
-const closePopUpEsc = (popup) => {
-  document.addEventListener('keydown', function (evt) {
-   if(evt.key === 'Escape') {
-   closePopUp(popup);}
- });
-};
-closePopUpEsc(popUpEdit);
-closePopUpEsc(popUpAdd);
-closePopUpEsc(popUpZoomInImg);
 
 //Навешивает слушатель на форму, если пользователь кликнул за пределами формы на сайте, то закрывает ее
 const handleClickOverlay = (evt) => {
   if(evt.target === evt.currentTarget) {
-    closePopUp(evt.target);
+  closePopUp(evt.target);
   }
 };
 
 // Открыть popup на добавление новой карточки
 popUpAddBut.addEventListener('click', function(evt) {
-  popUpAdd.addEventListener('click', handleClickOverlay);
   openPopUp(popUpAdd);
 });
 
@@ -112,7 +111,6 @@ popUpEditForm.addEventListener('submit', updateProfile);
 
 //Открыть popup c картинкой
 const popUpOpenImg = evt => {
-  popUpZoomInImg.addEventListener('click', handleClickOverlay);
   openPopUp(popUpZoomInImg);
   popUpImg.src = evt.target.src;
   popUpImg.alt = evt.target.alt;
@@ -157,14 +155,15 @@ initialCards.forEach(el => {
 });
 
 //Закрывает всплывающие окна
-for (let i=0; i<popUps.length;i++){
-  popUps[i].addEventListener('click', function (evt) {
-   const evtTarget = evt.target;
-    if (evtTarget === popUpCloseButs[i]){
-    popUps[i].removeEventListener('click', handleClickOverlay);  
-    closePopUp(popUps[i]);}
+popUps.forEach((popup, index) => {
+  popup.addEventListener('click', function (evt) {
+  if (evt.target === popUpCloseButs[index]){
+  closePopUp(popup);}
   });
-}
+});  
+
+
+
 
 
 
