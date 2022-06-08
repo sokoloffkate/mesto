@@ -67,24 +67,25 @@ function insertNameJob() {
 });
 
 //Функция, проверяющая нажата ли кнопка Esc, если нажата закрывает попап
-const PressEscHandler = (evt) => {
+const pressEscHandler = (evt) => {
   if(evt.key === 'Escape') {
   popUps.forEach((popup) => {
-  closePopUp(popup); 
+  if (popup.classList.contains('popup_opened')){
+  closePopUp(popup); }
   })};  
 };
 
  //Функция открытия popup
 const openPopUp = (popup) => {
   popup.classList.add('popup_opened');
-  document.addEventListener('keydown', PressEscHandler); 
+  document.addEventListener('keydown', pressEscHandler); 
   popup.addEventListener('click', handleClickOverlay);
 };
 
 //Функция закрытия popup
 const closePopUp = (popup) => {
   popup.classList.remove('popup_opened');
-  document.removeEventListener('keydown', PressEscHandler);
+  document.removeEventListener('keydown', pressEscHandler);
   popup.removeEventListener('click', handleClickOverlay);
 };
 
