@@ -1,5 +1,5 @@
-import {Card} from '/scripts/Card.js'
-import {FormValidator, validConfig} from '/scripts/FormValidator.js';
+import {Card} from './Card.js'
+import {FormValidator, validConfig} from './FormValidator.js';
 
 const cardGrid = document.querySelector('.elements-grid');
 const popUpAddForm = document.querySelector('.popup__form_add_card');
