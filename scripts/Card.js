@@ -38,6 +38,7 @@ createCard() {
 //Удаление карточки
 _removeCard = () => {
  this._element.remove(); 
+ this._element = null;
 }
 
 // Переключениe кнопки like 
