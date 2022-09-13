@@ -1,9 +1,9 @@
 export class Card {
-  constructor ({name, link}, cardSelector, openImage) {
+  constructor ({link, name}, cardSelector, handleCardClick) {
   this._name = name;
   this._link = link;
   this._cardSelector = cardSelector;
-  this._openImage = openImage;
+  this._handleCardClick = handleCardClick;
 } 
 
 _getTemplate() {
@@ -48,12 +48,12 @@ this._like.classList.toggle('elements-grid__icon_active');
 
 //Открыть popup c картинкой
 _handleImgClik = () => {
-  this._openImage({link: this._link, name: this._name});
+  this._handleCardClick({link: this._link, name: this._name});
 }
 
 _setEventListeners() {
 this._trashButton.addEventListener('click', this._removeCard);
 this._like.addEventListener('click', this._likeHandle);
 this._image.addEventListener('click', this._handleImgClik);
-}
+ }
 };

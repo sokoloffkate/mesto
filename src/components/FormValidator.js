@@ -60,6 +60,13 @@ export class FormValidator {
     }  
   };
 
+   deleteInputErrors = () => {
+    this._inputList.forEach((input) => {
+     this._hideError(input)
+    });
+    this._toggleButtonState();
+   }
+
    enableValidation = () => { 
      this._inputList.forEach((input) => {
      input.addEventListener('input', () => {
@@ -69,10 +76,7 @@ export class FormValidator {
     });
      this._toggleButtonState();
   };
-
 }
-
-    
     
     
   

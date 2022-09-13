@@ -5,17 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Место</title>
-    <link rel="stylesheet" href="pages/index.css">
 </head>
 <body class="page">
 
     <header class="header">
-      <img src="images/logo.svg" class="header__logo" alt="Лого">
+      <img src="./images/logo.svg" class="header__logo" alt="Лого">
     </header>
     
     <main class="content">
       <section class="profile">
-        <img src="images/Kusto.jpg" class="profile__avatar" alt="Кусто">
+        <img src="./images/Kusto.jpg" class="profile__avatar" alt="Кусто">
         <div class="profile__info">
           <h1 class="profile__title">Жак-Ив Кусто</h1>
           <p  class="profile__subtitle">Исследователь океана</p> 
@@ -25,6 +24,7 @@
         </section> 
        
       <section class="elements-grid">
+        
       </section>
     </main>
     
@@ -40,7 +40,7 @@
         <input type="text" 
           class="popup__field popup__field_type_name" 
           placeholder="Имя"
-          name="typeName" 
+          name="input-name" 
           minlength="2" 
           maxlength="40" 
           id="field-name"
@@ -49,7 +49,7 @@
         <input type="text" 
           class="popup__field popup__field_type_job"
           placeholder="Профессия" 
-          name="typeJob" 
+          name="input-job" 
           minlength="2" 
           maxlength="200" 
           id="field-job"
@@ -68,7 +68,7 @@
        <input type="text" 
           class="popup__field popup__field_place_name" 
           placeholder="Название" 
-          name="placeName"
+          name="place-name"
           minlength="2" 
           maxlength="30"
           id="field-place"
@@ -77,7 +77,7 @@
         <input type="url" 
           class="popup__field popup__field_place_link" 
           placeholder="Ссылка на картинку" 
-          name="placeLink"
+          name="place-link"
           id="field-link"
           required>
          <span class="popup__field-error field-link-error"></span>
@@ -97,7 +97,7 @@
     <template id="card-template">
       <div class="elements-grid__element">
         <button type="button" class = "elements-grid__trash"></button>
-        <img src = "/" alt = " " class="elements-grid__image">
+        <img src = "#" alt = " " class="elements-grid__image">
         <div class="elements-grid__info">
           <h2 class="elements-grid__title"></h2>
           <button type="button" class="elements-grid__icon"></button>
@@ -105,7 +105,5 @@
        </div> 
     </template>
 
-<script type="module" src='scripts/index.js'></script>
-<!--<script src='scripts/validate.js'></script>-->
 </body>
 </html>
