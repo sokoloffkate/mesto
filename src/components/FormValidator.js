@@ -1,11 +1,3 @@
-export const validConfig = {
-    inputSelector: 'popup__field',
-    submitButtonSelector: 'popup__button',
-    inactiveButtonClass: 'popup__button_inactive', 
-    inputErrorClass: 'popup__field_error-red-line',
-    errorClass: 'popup__field-error'
-  }
-  
 export class FormValidator {
     constructor (config, form) {
      this._inputSelector = config.inputSelector;

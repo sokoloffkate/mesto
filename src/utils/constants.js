@@ -27,15 +27,16 @@ export const initialCards = [
 
   export const validatorForms = {};
 
-  export const cardGrid = document.querySelector('.elements-grid');
+  //export const cardGrid = document.querySelector('.elements-grid');
   export const popUpAddBut = document.querySelector('.profile__add-button');
   export const popUpEditBut = document.querySelector('.profile__edit-button');
   export const popUpAddForm = document.querySelector('.popup__form_add_card');
   export const popUpEditForm = document.querySelector('.popup__form_edit_card');
   
-  export const popUpAdd = 'popup_add_card';
-  export const popUpEdit = 'popup_edit_profile';
-  export const popUpZoomInImg = 'popup_zoom-in_image';
+  export const popUpAdd = '.popup_add_card';
+  export const popUpEdit = '.popup_edit_profile';
+  export const popUpZoomInImg = '.popup_zoom-in_image';
+  export const cardGrid = '.elements-grid';
   
   export const formConfiguration = {
     formSelector: 'popup__form',
@@ -49,11 +50,19 @@ export const initialCards = [
   }
 
   export const profileConfiguraton = {
-    nameSelector: 'profile__title',
-    jobSelector: 'profile__subtitle',
+    nameSelector: '.profile__title',
+    jobSelector: '.profile__subtitle',
   }
 
   export const viewImagConfiguration = {
    imgSelector: 'popup__image',
    imgTitleSelector: 'popup__image-title',
+  }
+
+  export const validConfig = {
+    inputSelector: 'popup__field',
+    submitButtonSelector: 'popup__button',
+    inactiveButtonClass: 'popup__button_inactive', 
+    inputErrorClass: 'popup__field_error-red-line',
+    errorClass: 'popup__field-error'
   }

@@ -15,10 +15,12 @@ import {
   profileConfiguraton,
   viewImagConfiguration,
   validatorForms,
+  validConfig,
   
 } from '../utils/constants.js';
+
 import {Card} from '../components/Card.js';
-import {FormValidator, validConfig} from '../components/FormValidator.js';
+import {FormValidator} from '../components/FormValidator.js';
 import {Section} from '../components/Section.js';
 import {PopupWithForm} from '../components/PopupWithForm.js';
 import {UserInfo} from '../components/UserInfo.js';
@@ -29,7 +31,7 @@ Array.from(document.forms).forEach((formElement) => {
   validatorForms[formElement.name].enableValidation();
    }
  );
-console.log(validatorForms[popUpAddForm.name]);
+
 const viewPopup = new PopupWithImage(popUpZoomInImg, popupConfiguration, viewImagConfiguration);
 viewPopup.setEventListeners();
 
@@ -37,8 +39,7 @@ viewPopup.setEventListeners();
 const createCard = ({name: name, link: link}) =>
  {
   const newCard = new Card ({name: name, link: link}, '#card-template', viewPopup.open);
-  const cardElement = newCard.createCard();
-  renderCards.addItem(cardElement);
+  return newCard.createCard();
 };
 
 //Добавление карточек из массива через класс Section 
@@ -49,8 +50,11 @@ const renderCards = new Section (
   }, 
    cardGrid
   );
-  
 renderCards.renderItems();
+
+const handleCardSubmit = (item) => {
+  renderCards.addItem(item);
+}
 
 //Добавление новой карточки через форму 
 const newCardPopup = new PopupWithForm (
@@ -58,12 +62,11 @@ const newCardPopup = new PopupWithForm (
   popupConfiguration, 
   formConfiguration, 
   validatorForms[popUpAddForm.name].deleteInputErrors,
-  createCard
+  handleCardSubmit
   );
-newCardPopup.setEventListeners()
+newCardPopup.setEventListeners();
 
 const user = new UserInfo(profileConfiguraton);
-user.setUserInfo({name: 'Жак-Ив Кусто', job: 'Исследователь океана'});
 
 //Обновить данные профиля
 function updateProfile (data) {
@@ -75,8 +78,10 @@ const profilePopup = new PopupWithForm (
   popupConfiguration, 
   formConfiguration, 
   validatorForms[popUpEditForm.name].deleteInputErrors,
-  updateProfile
+  updateProfile,
+  user.getUserInfo
   );
+ 
 profilePopup.setEventListeners();  
 
 const handleEditFormOpen = () => {
@@ -85,16 +90,9 @@ const handleEditFormOpen = () => {
 
 popUpEditBut.addEventListener('click', handleEditFormOpen); 
 
-//Функция неактивной кнопки
-/*const disabledButton = (button) => {
-  button.classList.add("popup__button_inactive");
-  button.disabled = true;
-};*/
-
 // Открыть popup на добавление новой карточки
-popUpAddBut.addEventListener('click', function(evt) {
- // disabledButton(PopUpSubmitButton);
-  //openPopUp(popUpAdd);
+popUpAddBut.addEventListener('click', function() {
+   
   newCardPopup.open();
 });
 

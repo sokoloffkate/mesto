@@ -1,10 +1,10 @@
 export class Popup {
   constructor (popUpSelector, popupConfig) {
-    this._popUpSelector = popUpSelector;
     this._aciveModifier = popupConfig.aciveModifier;
     this._closeBtnSelector = popupConfig.closeBtnSelector;
-    this._popup = document.querySelector(`.${this._popUpSelector}`);
- } 
+    this._popup = document.querySelector(popUpSelector);
+    this._handleEscClose = this._handleEscClose.bind(this);
+   } 
   
  _handleBtnClose = () => {
   this.close();
@@ -22,21 +22,15 @@ _handleCloseOverlay = (evt) => {
   }
 }
 
-/*_disabledButton = () => {
-  this._closeBtn.classList.add(`${this._btnModifier}`);
-  this._closeBtn.disabled = true;
-}*/
-
-open() {
-  //this._disabledButton(); 
+open() { 
   this._popup.classList.add(`${this._aciveModifier}`);
-  document.addEventListener('keydown', this._handleEscClose.bind(this));
+  document.addEventListener('keydown', this._handleEscClose);
   this._popup.addEventListener('mousedown', this._handleCloseOverlay);
 }; 
 
 close() {
   this._popup.classList.remove(`${this._aciveModifier}`);
-  document.removeEventListener('keydown', this._handleEscClose.bind(this));
+  document.removeEventListener('keydown', this._handleEscClose);
   this._popup.removeEventListener('mousedown', this._handleCloseOverlay);
 }; 
 
