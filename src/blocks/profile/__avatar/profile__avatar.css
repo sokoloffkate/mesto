@@ -6,6 +6,11 @@
   border-radius: 50%; 
 }
 
+.profile__avatar:hover {
+  opacity: 0.6;
+  cursor: url(../../../images/Vector.png), pointer;
+}
+
 @media screen and (max-width: 568px) {
   .profile__avatar {
    margin: o auto;

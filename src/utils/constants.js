@@ -30,18 +30,22 @@ export const initialCards = [
   //export const cardGrid = document.querySelector('.elements-grid');
   export const popUpAddBut = document.querySelector('.profile__add-button');
   export const popUpEditBut = document.querySelector('.profile__edit-button');
+  export const popUpAvatarBut = document.querySelector('.profile__avatar');
   export const popUpAddForm = document.querySelector('.popup__form_add_card');
   export const popUpEditForm = document.querySelector('.popup__form_edit_card');
+  export const popUpCnangeAvatarForm = document.querySelector('.popup__form_change_avatar');
   
   export const popUpAdd = '.popup_add_card';
   export const popUpEdit = '.popup_edit_profile';
   export const popUpZoomInImg = '.popup_zoom-in_image';
   export const cardGrid = '.elements-grid';
+  export const popUpConfirmDelete = '.popup_confirm_delete';
+  export const popUpChangeAvatar = '.popup_change_avatar';
   
   export const formConfiguration = {
     formSelector: 'popup__form',
     inputFormSelector: 'popup__field',
-    submitBtnSelector: 'popup__button',
+    submitBtnSelector: '.popup__button',
   }
 
   export const popupConfiguration = {
@@ -52,6 +56,7 @@ export const initialCards = [
   export const profileConfiguraton = {
     nameSelector: '.profile__title',
     jobSelector: '.profile__subtitle',
+    avatarSelector: '.profile__avatar',
   }
 
   export const viewImagConfiguration = {
@@ -66,3 +71,18 @@ export const initialCards = [
     inputErrorClass: 'popup__field_error-red-line',
     errorClass: 'popup__field-error'
   }
+
+  export const stateBtnConfig = {
+    normalState: 'Сохранить',
+    activeState: 'Сохранение...',
+  }
+
+  export const settingConfig = {
+    url: 'https://mesto.nomoreparties.co/v1/cohort-50',
+    headers: {
+        authorization: "da117c90-7803-4f92-83b6-3c76194ee3e0", 
+        "Content-Type": "application/json", 
+    }
+  }
+
+ 
