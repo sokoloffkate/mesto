@@ -15,6 +15,7 @@ export class PopupWithForm extends Popup {
     this.switchStateBtn = this.switchStateBtn.bind(this);
     this._form = this._popup.querySelector(`.${this._formSelector}`);
     this._inputList = Array.from(this._form.querySelectorAll(`.${this._inputFormSelector}`));
+    this.close = this.close.bind(this);
   }  
 
   _getInputValues () {
@@ -34,7 +35,7 @@ export class PopupWithForm extends Popup {
    }
 
  switchStateBtn = (state) => {
-  this._submitBtn.textcontent = state ? this._activeState : this._normalState;
+  this._submitBtn.textContent = state ? this._activeState : this._normalState;
  }  
   
  setEventListeners() {
@@ -42,12 +43,13 @@ export class PopupWithForm extends Popup {
   this._form.addEventListener('submit', (evt) => {;
     evt.preventDefault();
     this._submitCallBack(this._getInputValues(), this.switchStateBtn);
-    this.close();
+    //this.close();
+   //super.close();
   })
  }
 
  open() {
-
+  
   if (this._getInputCallback) {
   this._setInputValues(this._getInputCallback());   
   } else {

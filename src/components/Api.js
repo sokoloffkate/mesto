@@ -103,7 +103,7 @@ deleteCard(cardId) {
       }
       
    changeAvatar(data) {
-    console.log(data);
+    console.log(data.avatar);
     return fetch (`${this._url}/users/me/avatar`, 
     {
       method: 'PATCH',
@@ -111,7 +111,7 @@ deleteCard(cardId) {
       body: JSON.stringify ({
         avatar: data.avatar,
       })
-      })
+        })
     .then ((res) => {
       if(res.ok) {
       return res.json();    

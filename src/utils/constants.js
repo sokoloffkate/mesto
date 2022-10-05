@@ -72,10 +72,20 @@ export const initialCards = [
     errorClass: 'popup__field-error'
   }
 
-  export const stateBtnConfig = {
+  export const stateSaveBtnConfig = {
     normalState: 'Сохранить',
     activeState: 'Сохранение...',
   }
+
+  export const stateCreateBtnConfig = {
+    normalState: 'Создать',
+    activeState: 'Создание...',
+  }
+
+  /*export const stateDeleteBtnConfig = {
+    normalState: 'Да',
+    activeState: 'Удаление...',
+  }*/
 
   export const settingConfig = {
     url: 'https://mesto.nomoreparties.co/v1/cohort-50',

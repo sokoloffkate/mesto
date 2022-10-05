@@ -18,4 +18,5 @@ export class PopupWithSubmit extends Popup {
     super.close();
   })
 }
-} 
+
+}

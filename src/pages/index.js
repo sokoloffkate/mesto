@@ -21,8 +21,9 @@ import {
   popUpChangeAvatar,
   popUpCnangeAvatarForm,
   popUpAvatarBut,
-  stateBtnConfig
-
+  stateSaveBtnConfig,
+  stateCreateBtnConfig,
+  
 } from '../utils/constants.js';
 
 import {Api} from '../components/Api.js';
@@ -42,15 +43,16 @@ Array.from(document.forms).forEach((formElement) => {
 });
 
 //Создание новой карточки
-const handleCardSubmit = (data) => {
+const handleCardSubmit = (data, switchBtnCallBack) => {
+  switchBtnCallBack(true)
   api.addNewCard(data)
   .then((res) => {
    const card= createCard(res);
    renderCards.addItem(card);
+   newCardPopup.close();
   })
-  .catch((err) => {
-   console.log(`Ошибка - ${err}`);
-   })
+  .catch((err) => console.log(`Ошибка - ${err}`))
+  .finally(() => switchBtnCallBack(false)); 
 };
 
 //Удаление карточки
@@ -62,11 +64,9 @@ const handleDeleteCard = (cardId, removeCard) => {
   removeCard(); 
   deletePopup.close();  
   })
-  .catch((err) => {
-  console.log(`Ошибка - ${err}`);
+  .catch((err) => console.log(`Ошибка - ${err}`));
     })
-  })
-}
+  }
 
 //Реализована постановка и снятие лайка
 const handleCardLike = (cardId, likeStatus, setLikesCallBack) => {
@@ -81,20 +81,24 @@ const handleCardLike = (cardId, likeStatus, setLikesCallBack) => {
 const updateProfile = (data, switchBtnCallBack) => {
   switchBtnCallBack(true);
   api.updateUserProfile(data)
-  .then((data) => user.setUserInfo(data))
-  .catch((err) => {console.log(`Ошибка - ${err}`)
-  .finally(() => switchBtnCallBack(false));
+  .then ((data) => {
+    user.setUserInfo(data);
+    profilePopup.close();
   })
+  .catch((err) => console.log(`Ошибка - ${err}`))
+  .finally(() => switchBtnCallBack(false));
 }; 
 
 //Обновить аватар
 const handleChangeAvatar = (data, switchBtnCallBack) => {
   switchBtnCallBack(true);
   api.changeAvatar(data)
-  .then((data) => {user.setUserInfo(data)})
-  .catch((err) => {console.log(`Ошибка - ${err}`)
+  .then((data) => {
+    user.setUserInfo(data);
+    changeAvatarPopup.close();
+  })
+  .catch((err) => console.log(`Ошибка - ${err}`))
   .finally(() => switchBtnCallBack(false));
-   })
 };
 
 //Функция создание карточки 
@@ -103,6 +107,7 @@ const createCard = (item) =>
  const newCard = new Card (item, user.getUserId(), '#card-template', handleCardLike, viewPopup.open, handleDeleteCard);
  return newCard.createCard();
 };
+
 //Создание класса Section для создание и отрисовки карточек
 const renderCards = new Section (
  { renderer: createCard }, 
@@ -119,7 +124,7 @@ const profilePopup = new PopupWithForm (
   formConfiguration, 
   validatorForms[popUpEditForm.name].deleteInputErrors,
   updateProfile,
-  stateBtnConfig,
+  stateSaveBtnConfig,
   user.getUserInfo
 );
 profilePopup.setEventListeners(); 
@@ -130,12 +135,11 @@ const newCardPopup = new PopupWithForm (
   formConfiguration, 
   validatorForms[popUpAddForm.name].deleteInputErrors,
   handleCardSubmit,
-  stateBtnConfig
+  stateCreateBtnConfig
   );
 newCardPopup.setEventListeners();
 
-const deletePopup = new PopupWithSubmit(popUpConfirmDelete, popupConfiguration, stateBtnConfig);
-
+const deletePopup = new PopupWithSubmit(popUpConfirmDelete, popupConfiguration);
 deletePopup.setEventListeners();
 
 const changeAvatarPopup = new PopupWithForm(
@@ -144,9 +148,8 @@ const changeAvatarPopup = new PopupWithForm(
   formConfiguration,
   validatorForms[popUpCnangeAvatarForm.name].deleteInputErrors,
   handleChangeAvatar,
-  stateBtnConfig,
-  user.getUserAvatar
-  );
+  stateSaveBtnConfig
+ );
 changeAvatarPopup.setEventListeners();
 
 const handleEditFormOpen = () => {
@@ -157,7 +160,7 @@ const handleEditFormOpen = () => {
 popUpEditBut.addEventListener('click', handleEditFormOpen);
 
 // Открыть popup на добавление новой карточки
-popUpAddBut.addEventListener('click', function() {
+popUpAddBut.addEventListener('click', () => {
   newCardPopup.open();
  }
 );

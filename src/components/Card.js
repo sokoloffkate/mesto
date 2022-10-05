@@ -36,7 +36,7 @@ createCard = () => {
  this._image.src = this._link;
  this._image.alt = this._name;
  this._element.querySelector('.elements-grid__title').textContent = this._name;
-  
+   
  this._setEventListeners();
  this._handleTrashIcon();
  this._renderLikes();
