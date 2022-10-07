@@ -39,4 +39,5 @@
 @import url(../blocks//popup/__button/_inactive/popup__button_inactive.css);
 @import url(../blocks/elements-grid/__info-icon/elements-grid__info-icon.css);
 @import url(../blocks/elements-grid/__likes-counter/elements-grid__likes-counter.css);
+@import url(../blocks/popup/_overlay/overlay.css);
 
